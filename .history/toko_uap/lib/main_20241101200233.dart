@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSwatch(
         primarySwatch: Colors.deepPurple,
-        ).copyWith(secondary: Colors.deepPurple[400]),
+        ).copyWith(secondary: const Color.fromARGB(255, 194, 128, 87)),
         useMaterial3: true,
       ),
       home: MyHomePage(),
