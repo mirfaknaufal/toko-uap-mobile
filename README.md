@@ -25,3 +25,23 @@ Perbedaan utama antara const dan final di Dart terletak pada waktu inisialisasi 
 2. Membuat file baru bernama `menu.dart`, lalu merapikan project.
 3. Mengubah warna tema aplikasi pada `main.dart`, mengubah sifat widget halaman menu menjadi stateless, membuat card untuk isi data, membuat button card untuk ketiga button yang diminta, lalu mengintegrasikan seluruh project.
 </details>
+
+<details>
+<summary>Tugas 8</summary>
+
+## Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+Di Flutter, const digunakan untuk membuat objek yang bersifat immutable dan sudah ditentukan nilainya saat kompilasi, yang dapat meningkatkan efisiensi memori dan kinerja aplikasi karena objek const hanya dibuat satu kali dan dapat digunakan ulang tanpa perlu mengalokasikan ulang memori. Keuntungan menggunakan const adalah mengurangi beban kerja pada Garbage Collector serta mempercepat rendering UI karena widget yang tidak berubah tidak perlu di-render ulang. const sebaiknya digunakan pada widget atau objek yang nilai dan tampilannya tidak akan berubah selama aplikasi berjalan, seperti teks statis, ikon, atau padding tetap. Namun, const sebaiknya tidak digunakan jika objek tersebut memiliki nilai yang dinamis atau bergantung pada variabel yang dapat berubah saat runtime, karena ini akan menghambat fleksibilitas kode.
+
+## Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Di Flutter, Column dan Row adalah widget layout dasar yang menyusun elemen secara vertikal dan horizontal. Column menempatkan widget dalam susunan vertikal dari atas ke bawah, cocok untuk menampilkan daftar elemen yang mengikuti aliran vertikal. Sebaliknya, Row menyusun widget secara horizontal dari kiri ke kanan, ideal untuk elemen yang berbaris sejajar. Keduanya memiliki properti mainAxisAlignment dan crossAxisAlignment untuk mengatur posisi dan penyelarasan widget di dalamnya.
+
+## Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Pada halaman form tugas ini, saya menggunakan elemen input TextFormField untuk mengisi informasi seperti produk, genre, dan harga. Elemen input Flutter lainnya yang tidak digunakan meliputi Checkbox, Radio, Switch, Slider, dan DropdownButton. Checkbox dan Switch berguna untuk memilih opsi ya/tidak, Radio untuk memilih satu opsi dari beberapa pilihan, Slider untuk mengatur nilai dalam rentang tertentu, dan DropdownButton menampilkan daftar pilihan dalam bentuk dropdown. Setiap elemen ini dapat digunakan sesuai kebutuhan untuk meningkatkan fleksibilitas input pengguna di aplikasi.
+
+## Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Untuk mengatur tema konsisten dalam aplikasi Flutter, saya mendefinisikan tema global di main.dart dengan ThemeData pada properti theme di MaterialApp. Pada aplikasi ini, primarySwatch diset ke warna `Colors.deepPurple`, sementara secondary diset ke `Colors.deepPurple[400]` untuk menyesuaikan tampilan. Dengan konfigurasi ini, warna dan gaya elemen di seluruh aplikasi, seperti AppBar dan tombol, otomatis mengikuti tema yang telah ditentukan, sehingga tampilan aplikasi menjadi seragam dan konsisten.
+
+## Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Dalam aplikasi Flutter dengan banyak halaman, navigasi dapat ditangani menggunakan kombinasi Navigator.push dan Navigator.pushReplacement pada Drawer dan ItemCard. Pada LeftDrawer, saya menggunakan Navigator.pushReplacement untuk berpindah ke halaman utama tanpa kembali ke halaman sebelumnya, seperti pada MyHomePage, dan Navigator.push untuk menambahkan halaman baru ke tumpukan, seperti saat membuka ProductEntryFormPage. Di ItemCard, periksa nama item dan arahkan ke halaman terkait menggunakan Navigator.push, misalnya ketika item bernama "Tambah Item" untuk membuka ProductEntryFormPage. Pendekatan ini memungkinkan navigasi yang efisien dan intuitif antarhalaman.
+
+</details>
