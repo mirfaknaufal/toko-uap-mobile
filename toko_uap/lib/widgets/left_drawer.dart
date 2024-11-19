@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toko_uap/screens/menu.dart';
 import 'package:toko_uap/screens/productentry_form.dart';
+import 'package:toko_uap/screens/list_productentry.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -61,6 +62,16 @@ class LeftDrawer extends StatelessWidget {
                 ),
               );
             },
+          ),
+          ListTile(
+              leading: const Icon(Icons.shopping_bag),
+              title: const Text('Daftar Product'),
+              onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProductPage()),
+                  );
+              },
           ),
         ],
       ),
