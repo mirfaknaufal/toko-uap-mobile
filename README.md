@@ -45,3 +45,28 @@ Untuk mengatur tema konsisten dalam aplikasi Flutter, saya mendefinisikan tema g
 Dalam aplikasi Flutter dengan banyak halaman, navigasi dapat ditangani menggunakan kombinasi Navigator.push dan Navigator.pushReplacement pada Drawer dan ItemCard. Pada LeftDrawer, saya menggunakan Navigator.pushReplacement untuk berpindah ke halaman utama tanpa kembali ke halaman sebelumnya, seperti pada MyHomePage, dan Navigator.push untuk menambahkan halaman baru ke tumpukan, seperti saat membuka ProductEntryFormPage. Di ItemCard, periksa nama item dan arahkan ke halaman terkait menggunakan Navigator.push, misalnya ketika item bernama "Tambah Item" untuk membuka ProductEntryFormPage. Pendekatan ini memungkinkan navigasi yang efisien dan intuitif antarhalaman.
 
 </details>
+<details>
+<summary>Tugas 9</summary>
+
+## Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+Membuat model untuk pengambilan atau pengiriman data JSON penting karena model berfungsi sebagai cetak biru yang memastikan struktur data yang diterima atau dikirim memiliki format yang konsisten dan sesuai dengan kebutuhan aplikasi. Dengan model, proses validasi data menjadi lebih mudah, sehingga meminimalkan risiko error seperti data yang tidak sesuai dengan tipe atau struktur yang diharapkan. Jika model tidak dibuat, kemungkinan terjadinya error atau inkonsistensi data meningkat karena data mentah yang diterima atau dikirim mungkin tidak sesuai dengan skema yang diinginkan, menyebabkan masalah kompatibilitas dan potensi kerentanan di aplikasi.
+
+## Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+Library http dalam Flutter berfungsi untuk memfasilitasi komunikasi antara aplikasi dan server melalui protokol HTTP. Library ini memungkinkan pengembang untuk melakukan permintaan HTTP seperti GET, POST, PUT, dan DELETE, serta menangani respons yang diterima dari server. Dengan http, pengembang dapat dengan mudah mengelola data JSON, menangani header, dan mengelola status respons, sehingga mempermudah integrasi API dan pengelolaan data jaringan dalam aplikasi Flutter.
+
+## Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+CookieRequest berfungsi untuk mengelola sesi HTTP dengan menggunakan cookie, memungkinkan aplikasi mempertahankan status pengguna secara aman selama interaksi dengan server, seperti saat login atau mengakses data pribadi. Instance CookieRequest perlu dibagikan ke semua komponen di aplikasi Flutter agar status sesi tetap konsisten di seluruh bagian aplikasi. Ini memungkinkan berbagai komponen untuk mengakses data pengguna yang tersimpan dan tetap terotentikasi tanpa perlu login ulang atau menyimpan status secara manual, meningkatkan efisiensi dan pengalaman pengguna.
+
+## Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+Mekanisme pengiriman data dalam Flutter dimulai dengan input data dari pengguna melalui widget formulir. Data yang dimasukkan dikumpulkan dan dikirim ke server menggunakan metode HTTP, seperti POST, melalui library http. Server kemudian memproses data tersebut dan memberikan respons, biasanya dalam format JSON. Flutter menerima respons ini, memparsingnya menggunakan `dart:convert` atau model data yang dibuat, dan menampilkan hasilnya pada UI dengan widget yang sesuai. Proses ini melibatkan sinkronisasi data dari input hingga ditampilkan, memastikan bahwa komunikasi antara frontend dan backend berjalan lancar dan data ditampilkan secara real-time atau sesuai permintaan.
+
+## Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+Mekanisme autentikasi dimulai ketika pengguna memasukkan data akun (login atau register) pada Flutter. Data ini dikirim ke backend Django melalui permintaan HTTP (POST). Untuk proses registrasi, Django memvalidasi data, membuat akun baru, dan mengembalikan respons sukses. Pada login, Django memeriksa kredensial pengguna dan, jika valid, mengembalikan token atau session ID untuk autentikasi. Flutter menyimpan token tersebut untuk digunakan pada permintaan berikutnya guna menjaga sesi pengguna tetap aktif. Ketika logout, Flutter mengirim permintaan logout ke Django, yang kemudian menghapus token atau session ID tersebut, mengakhiri sesi pengguna. Setelah autentikasi berhasil, Flutter menampilkan menu utama atau halaman yang diakses sesuai dengan status login pengguna.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!
+1. Membuat django app bernama `authentication` untuk mengelola autentikasi seperti login, register dan logout.
+2. Mengintegrasi flutter dengan app `authentication` pada django.
+3. Membuat direktori baru pada lib bernama `models`, lalu menambahkan file untuk model kustom dan mengisinya dengan code yang didapatkan dari Quicktype.
+4. Menerapkan fetch data dari django untuk ditampilkan pada fluter.
+5. Mengintegrasi from flutter dengan django.
+</details>
